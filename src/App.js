@@ -9,17 +9,24 @@ function App() {
 
   const [numbers, setNumbers] = useState([6, 7, 8, 9]);
 
+  const [infoText, setInfoText] = useState("Iphone de Albert");
+
   const actionCall = () => {
     setCallStatus(true);
+    setInfoText("Calling...");
   };
 
   const actionHang = () => {
-    setCallStatus(false);
+    setInfoText("Iphone de Albert");
+    setNumbers([]);
   };
 
   const addNumber = (number) => {
     if (numbers.length === 9) {
       return;
+    }
+    if (numbers.length === 8) {
+      setCallStatus(false);
     }
     setNumbers([...numbers, number]);
   };
@@ -30,7 +37,7 @@ function App() {
 
   return (
     <div className="container" id="phone">
-      <Info text={"Calling..."} />
+      <Info text={infoText} />
       <main className="phone">
         <Keyboard deleteAction={deleteNumbers} keyAction={addNumber} />
         <div className="actions">
