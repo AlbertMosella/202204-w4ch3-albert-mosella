@@ -1,10 +1,10 @@
 const Actions = () => {
   return (
     <>
-      <a href="#" className="call">
+      <a href="index.html" className="call">
         Call
       </a>
-      <a href="#" className="hang active">
+      <a href="index.html" className="hang active">
         Hang
       </a>
     </>
