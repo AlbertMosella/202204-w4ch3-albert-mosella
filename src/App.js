@@ -1,3 +1,5 @@
+import Actions from "./components/Actions/Actions";
+import Display from "./components/Display/Display";
 import Info from "./components/Info/Info";
 
 function App() {
@@ -43,13 +45,8 @@ function App() {
           </ol>
         </div>
         <div className="actions">
-          <span className="number">667359961</span>
-          <a href="#" className="call">
-            Call
-          </a>
-          <a href="#" className="hang active">
-            Hang
-          </a>
+          <Display number={"667359961"} />
+          <Actions />
         </div>
       </main>
     </div>
