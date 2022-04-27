@@ -1,20 +1,18 @@
 import Key from "../Key/Key";
 
-const Keyboard = () => {
+const Keyboard = ({ keyAction, deleteAction }) => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   return (
     <div className="keyboard-container">
       <ol className="keyboard">
-        <Key className={"key"} text={1} />
-        <Key className={"key"} text={2} />
-        <Key className={"key"} text={3} />
-        <Key className={"key"} text={4} />
-        <Key className={"key"} text={5} />
-        <Key className={"key"} text={6} />
-        <Key className={"key"} text={7} />
-        <Key className={"key"} text={8} />
-        <Key className={"key"} text={9} />
-        <Key className={"key"} text={0} />
-        <Key className={"key big"} text={"delete"} />
+        {numbers.map((number) => {
+          return <Key key={number} number={number} action={keyAction} />;
+        })}
+        <li>
+          <button onClick={deleteAction} className="key big">
+            delete
+          </button>
+        </li>
       </ol>
     </div>
   );
